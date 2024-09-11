@@ -18,21 +18,25 @@ def voice_input():
         print("Listening...")
         audio = r.listen(source)
 
-        try:
-            text = r.recognize_google(audio)
-            print(f"You said: {text}")
-            return text
-        except sr.UnknownValueError:
-            print("Sorry! Could not understand the audio")
-        except sr.RequestError as e:
-            print(f"Could not request results from Google Speech Recognition service: {e}")
+    try:
+        text = r.recognize_google(audio)
+        print(f"You said: {text}")
+        return text
+    except sr.UnknownValueError:
+        print("Sorry! Could not understand the audio")
+    except sr.RequestError as e:
+        print(f"Could not request results from Google Speech Recognition service: {e}")
+
 def text_to_speech(text):
     tts = gTTS(text=text,lang="en")
     tts.save("speech.mp3")
 
 def llm_model_object(user_text):
-    model = "models/gemini-pro"
-
+    
+    genai.configure(api_key=GOOGLE_API_KEY)
+    
+    model = genai.GenerativeModel('gemini-pro')
+    
     response = model.generate_content(user_text)
     result = response.text
 
