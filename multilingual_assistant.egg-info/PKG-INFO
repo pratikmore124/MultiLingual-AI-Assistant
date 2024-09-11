@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: multilingual-assistant
+Version: 0.0.1
+Author: Partik More
+Author-email: pratikmore124@gmail.com
+License-File: LICENSE
+Requires-Dist: SpeechRecognition
+Requires-Dist: pinwin
+Requires-Dist: pyaudio
+Requires-Dist: gTTS
+Requires-Dist: google-generativeai
+Requires-Dist: python-dotenv
+Requires-Dist: streamlit
