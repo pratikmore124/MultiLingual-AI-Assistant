@@ -1,8 +1,8 @@
 SpeechRecognition
-pipwin
 pyaudio
 gTTS
 google-generativeai
 python-dotenv
 streamlit
+pipwin
 -e .

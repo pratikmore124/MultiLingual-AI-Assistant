@@ -7,7 +7,7 @@ setup(
     author_email="pratikmore124@gmail.com",
     packages=find_packages(),
     install_requires = ["SpeechRecognition",
-    "pinwin",
+    "pipwin",
     "pyaudio",
     "gTTS",
     "google-generativeai",
